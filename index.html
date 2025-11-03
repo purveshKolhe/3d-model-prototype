@@ -8,10 +8,21 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   </head>
   <body>
+    <div class="backdrop" aria-hidden="true">
+      <span class="glow glow-left"></span>
+      <span class="glow glow-right"></span>
+    </div>
     <main class="app" aria-label="Chat between Sans and Anton about a laptop">
       <header class="chat-header">
-        <h1>Sans &amp; Anton</h1>
-        <p class="chat-subtitle">Discussing the perfect laptop</p>
+        <div class="chat-header__main">
+          <div>
+            <h1>Sans &amp; Anton</h1>
+          </div>
+          <div class="chat-status" role="status" aria-live="polite">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="status-text">Live thread</span>
+          </div>
+        </div>
       </header>
 
       <section class="chat-window" aria-live="polite">
@@ -50,6 +61,17 @@
           </div>
         </article>
       </section>
+
+      <footer class="chat-footer" aria-hidden="true">
+        <div class="input-shell">
+          <span class="placeholder">Type a reply…</span>
+          <div class="input-actions">
+            <span class="icon" aria-hidden="true">📎</span>
+            <span class="icon" aria-hidden="true">😊</span>
+            <span class="icon send" aria-hidden="true">➤</span>
+          </div>
+        </div>
+      </footer>
     </main>
 
     <div id="model-overlay" class="model-overlay" aria-hidden="true" role="dialog" aria-label="Laptop 3D model viewer">
